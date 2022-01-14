@@ -202,8 +202,14 @@ class Client:
         """Make an initial GET request to initialize the session otherwise
         future POST requests will timeout."""
         self._init_ssl_context()
+        # initial request is an html page.. needs additional headers to
+        # get the session cookie.
+        headers = self._agent_headers()
+        headers["accept"] = "text/html"
+        headers["accept-encoding"] = "*"
+        headers["accept-language"] = "en-US,en;q=0.9"
         await self.websession.get(
-            BASE_URL, headers=self._agent_headers(), ssl=self.ssl_context
+            BASE_URL, headers=headers, ssl=self.ssl_context
         )
 
     def _agent_headers(self):
