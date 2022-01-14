@@ -11,9 +11,9 @@ OD_READ_ENDPOINT = "/ondemandread"
 INTERVAL_SYNCH = "/adhoc/intervalsynch"
 
 USER_AGENT_TEMPLATE = (
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) "
+    "Mozilla/5.0 (X11; Linux x86_64) "
     "AppleWebKit/537.36 (KHTML, like Gecko) "
-    "Chrome/85.0.{BUILD}.{REV} Safari/537.36"
+    "Chrome/97.0.{BUILD}.{REV} Safari/537.36"
 )
 CLIENT_HEADERS = {
     "Content-Type": "application/json",
